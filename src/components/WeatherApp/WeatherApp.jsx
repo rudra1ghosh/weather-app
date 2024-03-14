@@ -12,6 +12,7 @@ import clear_icon from "../Assets/clear.png";
 export const WeatherApp = () => {
   let api_key = "9e3dc7672b687f017921c7eaa95eaacd";
   const [ic,seticon]=useState(clear_icon);
+  const [imgurl,setimgurl]=useState("");
   const search = async () => {
     const element = document.getElementsByClassName("cityInput");
     if (element[0].value === "") {
@@ -30,6 +31,7 @@ export const WeatherApp = () => {
     temperature[0].innerHTML = Math.round(data.main.temp) + "°C";
     location[0].innerHTML = data.name;
     description[0].innerHTML = data.weather[0].main;
+    setimgurl(`https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`);
     if(data.weather[0].icon==="01d" || data.weather[0].icon==="01n") seticon(clear_icon);
     else if(data.weather[0].icon==="02d" || data.weather[0].icon==="02n") seticon(cloud_icon);
     else if(data.weather[0].icon==="03d" || data.weather[0].icon==="03n" || data.weather[0].icon==="04d" || data.weather[0].icon==="04n") seticon(drizzle_icon);
@@ -51,7 +53,7 @@ export const WeatherApp = () => {
         </div>
       </div>
       <div className="weather-image">
-        <img src={ic} alt="" />
+        <img src={imgurl} alt="" />
       </div>
       <div className="weather-temp">NA</div>
       <div className="weather-desc">NA</div>
