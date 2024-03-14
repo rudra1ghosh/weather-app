@@ -10,7 +10,7 @@ import cloud_icon from "../Assets/cloud.png";
 import clear_icon from "../Assets/clear.png";
 
 export const WeatherApp = () => {
-  let api_key = "9e3dc7672b687f017921c7eaa95eaacd";
+  let api_key = "";
   const [ic,seticon]=useState(clear_icon);
   const [imgurl,setimgurl]=useState("");
   const search = async () => {
