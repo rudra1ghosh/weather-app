@@ -51,7 +51,7 @@ export const WeatherApp = () => {
         </div>
       </div>
       <div className="weather-image">
-        <img src={cloud_icon} alt="" />
+        <img src={ic} alt="" />
       </div>
       <div className="weather-temp">NA</div>
       <div className="weather-desc">NA</div>
